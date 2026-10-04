@@ -119,22 +119,22 @@
             <p class="text-slate-600 text-sm">Pilih topik pembahasan di bawah untuk menelaah aspek masalah secara detail.</p>
         </div>
 
-        <!-- Tombol Navigasi Atas (Pill Buttons) -->
-        <div class="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-10 bg-white p-3 rounded-2xl shadow-sm border border-slate-200/70 sticky top-24 z-30 backdrop-blur-md bg-white/90">
-            <button onclick="jumpToSection(1)" id="pill-1" class="pill-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-amber-700 text-white shadow-sm transition-all">
+        <!-- Tombol Navigasi Atas (Pill Buttons) - 1 Baris & Dikecilkan -->
+        <div class="flex flex-nowrap items-center justify-start md:justify-center gap-1.5 md:gap-2 mb-10 bg-white p-2.5 rounded-2xl shadow-sm border border-slate-200/70 sticky top-24 z-30 backdrop-blur-md bg-white/90 overflow-x-auto">
+            <button onclick="jumpToSection(1)" id="pill-1" class="pill-btn px-2.5 py-1.5 rounded-xl text-[11px] md:text-xs font-semibold bg-amber-700 text-white shadow-sm transition-all whitespace-nowrap">
                 01.Masalahnya?
             </button>
-            <button onclick="jumpToSection(2)" id="pill-2" class="pill-btn px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
+            <button onclick="jumpToSection(2)" id="pill-2" class="pill-btn px-2.5 py-1.5 rounded-xl text-[11px] md:text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all whitespace-nowrap">
                 02.Penyebabnya?
             </button>
-            <button onclick="jumpToSection(3)" id="pill-3" class="pill-btn px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
+            <button onclick="jumpToSection(3)" id="pill-3" class="pill-btn px-2.5 py-1.5 rounded-xl text-[11px] md:text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all whitespace-nowrap">
                 03.Dampaknya?
             </button>
-            <button onclick="jumpToSection(4)" id="pill-4" class="pill-btn px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
-                04.Dengan Demokrasi
+            <button onclick="jumpToSection(4)" id="pill-4" class="pill-btn px-2.5 py-1.5 rounded-xl text-[11px] md:text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all whitespace-nowrap">
+                04.Demokrasi
             </button>
-            <button onclick="jumpToSection(5)" id="pill-5" class="pill-btn px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all">
-                05.Dari Pihak Sekolah
+            <button onclick="jumpToSection(5)" id="pill-5" class="pill-btn px-2.5 py-1.5 rounded-xl text-[11px] md:text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all whitespace-nowrap">
+                05.Sekolah
             </button>
         </div>
 
@@ -405,9 +405,9 @@
                 const pill = document.getElementById('pill-' + i);
                 if (pill) {
                     if (i === activeIndex) {
-                        pill.className = "pill-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-amber-700 text-white shadow-sm transition-all";
+                        pill.className = "pill-btn px-2.5 py-1.5 rounded-xl text-[11px] md:text-xs font-semibold bg-amber-700 text-white shadow-sm transition-all whitespace-nowrap";
                     } else {
-                        pill.className = "pill-btn px-4 py-2 rounded-xl text-xs md:text-sm font-medium text-slate-600 hover:bg-slate-100 transition-all";
+                        pill.className = "pill-btn px-2.5 py-1.5 rounded-xl text-[11px] md:text-xs font-medium text-slate-600 hover:bg-slate-100 transition-all whitespace-nowrap";
                     }
                 }
             }
