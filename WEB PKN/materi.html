@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi - Perilaku Demokratis (Kelompok 2)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F8F6F0] text-slate-800 font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-blue-900 selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12" id="navbar">
+        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/80 backdrop-blur-md px-6 py-3 rounded-full shadow-sm border border-slate-200/50">
+            <!-- Brand / Group info -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-lg shadow-md animate-pulse">
+                    K2
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold text-slate-900 leading-tight">Kelompok 2</h1>
+                    <p class="text-[11px] text-slate-500 font-medium">Wo Ai Ni with PPKN · XI SIJA 1</p>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center space-x-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                    <i class="fa-solid fa-landmark text-xs"></i>
+                    <span>Beranda</span>
+                </a>
+                <a href="materi.html" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center space-x-2 text-blue-900 bg-slate-100 shadow-sm">
+                    <i class="fa-solid fa-book-open text-xs"></i>
+                    <span>Materi</span>
+                </a>
+                <a href="analisis.html" class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center space-x-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                    <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                    <span>Analisis Kasus</span>
+                </a>
+                <a href="solusi.html" class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center space-x-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                    <i class="fa-solid fa-lightbulb text-xs"></i>
+                    <span>Solusi</span>
+                </a>
+                <a href="kampanye.html" class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center space-x-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                    <i class="fa-solid fa-bullhorn text-xs"></i>
+                    <span>Kampanye & Anggota</span>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-700 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-6 right-6 mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 p-4 flex flex-col space-y-2 transition-all">
+            <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center space-x-3">
+                <i class="fa-solid fa-landmark text-xs w-5"></i><span>Beranda</span>
+            </a>
+            <a href="materi.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-slate-100 text-blue-900 flex items-center space-x-3">
+                <i class="fa-solid fa-book-open text-xs w-5"></i><span>Materi</span>
+            </a>
+            <a href="analisis.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center space-x-3">
+                <i class="fa-solid fa-magnifying-glass text-xs w-5"></i><span>Analisis Kasus</span>
+            </a>
+            <a href="solusi.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center space-x-3">
+                <i class="fa-solid fa-lightbulb text-xs w-5"></i><span>Solusi</span>
+            </a>
+            <a href="kampanye.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center space-x-3">
+                <i class="fa-solid fa-bullhorn text-xs w-5"></i><span>Kampanye & Anggota</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero / Cover Banner Section -->
+    <section class="relative min-h-screen bg-[#1c445c] text-white flex flex-col justify-between pt-32 pb-36 overflow-hidden">
+        <!-- Canvas for Starfall / Particle Animation -->
+        <canvas id="starfall-canvas" class="absolute inset-0 pointer-events-none z-0"></canvas>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center my-auto">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-xs md:text-sm font-medium tracking-wide mb-6 shadow-sm">
+                <span>MATERI PEMBELAJARAN PPKN</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-['Playfair_Display'] tracking-tight mb-4">
+                Perilaku <span class="italic font-normal text-blue-200">Demokratis</span>
+            </h1>
+            
+            <p class="text-slate-200/90 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                Memahami makna perilaku demokratis beserta contoh nyatanya dalam kehidupan sehari-hari di lingkungan sekolah dan masyarakat.
+            </p>
+        </div>
+
+        <!-- Wave Divider Shape at Bottom of Cover -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10">
+            <svg class="relative block w-full h-16 md:h-24 lg:h-32 text-[#F8F6F0]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,50 L1200,120 L0,120 Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="py-12 px-6 md:px-12 max-w-5xl mx-auto">
+        <!-- Divider with Title -->
+        <div class="relative flex py-5 items-center mb-8">
+            <div class="flex-grow border-t border-slate-300/70"></div>
+            <span class="flex-shrink mx-4 text-xs font-bold uppercase tracking-wider text-slate-600 bg-white px-4 py-1.5 rounded-full border border-slate-200 shadow-sm">PENGERTIAN & SUMBER</span>
+            <div class="flex-grow border-t border-slate-300/70"></div>
+        </div>
+
+        <!-- Definition Box -->
+        <div class="bg-blue-50/60 border border-blue-100 rounded-3xl p-6 md:p-8 mb-8 shadow-sm hover:shadow-md transition-shadow">
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed">
+                <strong class="text-blue-900 font-bold">Perilaku demokratis</strong> adalah sikap dan tindakan yang mencerminkan nilai-nilai demokrasi — yakni menghargai kebebasan berpendapat, menjunjung hak asasi manusia, dan mengutamakan musyawarah dalam pengambilan keputusan. Berikut definisi dari sumber terpercaya:
+            </p>
+        </div>
+
+        <!-- Clickable Sources Accordion Section -->
+        <div class="space-y-4 mb-20">
+            <!-- Source 1: KBBI -->
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/70 overflow-hidden transition-all duration-300 hover:border-blue-300">
+                <button onclick="toggleAccordion('source1', 'icon1')" class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-slate-50/80 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-blue-900 text-white font-bold text-sm flex items-center justify-center shadow-md">
+                            S1
+                        </div>
+                        <span class="font-bold text-slate-900 text-base md:text-lg">Kamus Besar Bahasa Indonesia (KBBI)</span>
+                    </div>
+                    <i id="icon1" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="source1" class="hidden px-6 pb-6 pt-2 text-slate-600 text-sm md:text-base border-t border-slate-100 bg-slate-50/50 accordion-content">
+                    <p class="italic bg-white p-4 rounded-2xl border border-slate-100 shadow-inner mt-2">
+                        <i class="fa-solid fa-quote-left text-blue-900 mr-2 opacity-50"></i>
+                        Demokrasi adalah bentuk atau sistem pemerintahan yang segenap rakyat turut serta memerintah dengan perantaraan wakilnya; pemerintahan rakyat.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Source 2: Kemendagri -->
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/70 overflow-hidden transition-all duration-300 hover:border-blue-300">
+                <button onclick="toggleAccordion('source2', 'icon2')" class="w-full p-6 flex items-center justify-between text-left focus:outline-none hover:bg-slate-50/80 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-blue-900 text-white font-bold text-sm flex items-center justify-center shadow-md">
+                            S2
+                        </div>
+                        <span class="font-bold text-slate-900 text-base md:text-lg">Kementerian Dalam Negeri RI (Kemendagri)</span>
+                    </div>
+                    <i id="icon2" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="source2" class="hidden px-6 pb-6 pt-2 text-slate-600 text-sm md:text-base border-t border-slate-100 bg-slate-50/50 accordion-content">
+                    <p class="italic bg-white p-4 rounded-2xl border border-slate-100 shadow-inner mt-2">
+                        <i class="fa-solid fa-quote-left text-blue-900 mr-2 opacity-50"></i>
+                        Demokrasi adalah sistem pemerintahan dari rakyat, oleh rakyat, dan untuk rakyat, di mana kekuasaan tertinggi berada di tangan rakyat.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Contoh Perilaku -->
+        <div class="relative flex py-5 items-center mb-12">
+            <div class="flex-grow border-t border-slate-300/70"></div>
+            <span class="flex-shrink mx-4 text-xs font-bold uppercase tracking-wider text-slate-600 bg-white px-4 py-1.5 rounded-full border border-slate-200 shadow-sm">CONTOH PERILAKU</span>
+            <div class="flex-grow border-t border-slate-300/70"></div>
+        </div>
+
+        <div class="text-center mb-12">
+            <p class="text-slate-600 text-sm">Minimal 3 contoh perilaku demokratis dalam kehidupan sehari-hari — klik atau hover kartu untuk melihat rincian!</p>
+        </div>
+
+        <!-- 3 Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/70 overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="relative h-48 overflow-hidden bg-slate-200">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent z-10"></div>
+                        <img src="IMG_1925.JPG" alt="Diskusi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute bottom-4 left-4 z-20 text-white font-bold text-xl font-['Playfair_Display']">01</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 text-lg mb-3 flex items-center space-x-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-900 animate-pulse"></span>
+                            <span>Menghargai Pendapat Orang Lain</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Saat diskusi kelas atau rapat OSIS, setiap anggota mendengarkan pendapat temannya tanpa memotong pembicaraan dan tidak memaksakan pandangan pribadi.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <div class="bg-blue-50/70 border border-blue-100 p-3.5 rounded-2xl flex items-center space-x-3 text-xs text-blue-900 font-medium">
+                        <i class="fa-solid fa-pen-nib text-blue-700 shrink-0"></i>
+                        <span>Dalam rapat kelas, semua siswa diberi giliran bicara.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/70 overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="relative h-48 overflow-hidden bg-slate-200">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent z-10"></div>
+                        <img src="IMG_1825.JPG" alt="Rapat" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute bottom-4 left-4 z-20 text-white font-bold text-xl font-['Playfair_Display']">02</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 text-lg mb-3 flex items-center space-x-2">
+                            <span class="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
+                            <span>Menyampaikan Kritik Secara Santun</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Menyampaikan ketidaksetujuan atau saran dengan bahasa yang sopan dan konstruktif — bukan menyerang pribadi, melainkan membahas substansi permasalahan.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <div class="bg-orange-50/70 border border-orange-100 p-3.5 rounded-2xl flex items-center space-x-3 text-xs text-amber-800 font-medium">
+                        <i class="fa-solid fa-pen-nib text-orange-600 shrink-0"></i>
+                        <span>Mengkritik kebijakan sekolah melalui organisasi siswa secara resmi.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/70 overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="relative h-48 overflow-hidden bg-slate-200">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent z-10"></div>
+                        <img src="IMG_2046.JPG" alt="Kerjasama" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute bottom-4 left-4 z-20 text-white font-bold text-xl font-['Playfair_Display']">03</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-slate-900 text-lg mb-3 flex items-center space-x-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                            <span>Menjunjung Keputusan Bersama</span>
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Setelah musyawarah mufakat atau voting, semua pihak menerima dan melaksanakan hasil keputusan bersama dengan lapang dada meski berbeda dari pendapat awal.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-6 pt-0">
+                    <div class="bg-emerald-50/70 border border-emerald-100 p-3.5 rounded-2xl flex items-center space-x-3 text-xs text-emerald-800 font-medium">
+                        <i class="fa-solid fa-pen-nib text-emerald-600 shrink-0"></i>
+                        <span>Menerima hasil pemilihan ketua OSIS meskipun kandidat pilihanmu kalah.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1c445c] text-white py-12 px-6 md:px-12 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-xl font-bold font-['Playfair_Display'] mb-2">Demokrasi di Era Keterbukaan Informasi</h2>
+            <p class="text-slate-300 text-xs mb-6">Tugas Pendidikan Pancasila & Kewarganegaraan · Kelompok 2 XI SIJA 1</p>
+            <div class="w-16 h-[1px] bg-white/20 mx-auto mb-6"></div>
+            <p class="text-[11px] text-slate-400">&copy; 2026 Kelompok 2. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
