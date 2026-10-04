@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampanye & Anggota - Demokrasi di Era Keterbukaan Informasi (Kelompok 2)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#F8F6F0] text-slate-800 font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-blue-900 selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12" id="navbar">
+        <div class="max-w-7xl mx-auto flex items-center justify-between bg-white/80 backdrop-blur-md px-6 py-3 rounded-full shadow-sm border border-slate-200/50">
+            <!-- Brand / Group info -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center font-bold text-lg shadow-md animate-pulse">
+                    K2
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold text-slate-900 leading-tight">Kelompok 2</h1>
+                    <p class="text-[11px] text-slate-500 font-medium">Wo Ai Ni with PPKN · XI SIJA 1</p>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <a href="index.html" class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center space-x-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                    <i class="fa-solid fa-landmark text-xs"></i>
+                    <span>Beranda</span>
+                </a>
+                <a href="materi.html" class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center space-x-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                    <i class="fa-solid fa-book-open text-xs"></i>
+                    <span>Materi</span>
+                </a>
+                <a href="analisis.html" class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center space-x-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                    <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                    <span>Analisis Kasus</span>
+                </a>
+                <a href="solusi.html" class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center space-x-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900">
+                    <i class="fa-solid fa-lightbulb text-xs"></i>
+                    <span>Solusi</span>
+                </a>
+                <a href="kampanye.html" class="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center space-x-2 text-blue-900 bg-slate-100 shadow-sm">
+                    <i class="fa-solid fa-bullhorn text-xs"></i>
+                    <span>Kampanye & Anggota</span>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-700 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-6 right-6 mt-2 bg-white rounded-2xl shadow-xl border border-slate-100 p-4 flex flex-col space-y-2 transition-all">
+            <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center space-x-3">
+                <i class="fa-solid fa-landmark text-xs w-5"></i><span>Beranda</span>
+            </a>
+            <a href="materi.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center space-x-3">
+                <i class="fa-solid fa-book-open text-xs w-5"></i><span>Materi</span>
+            </a>
+            <a href="analisis.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center space-x-3">
+                <i class="fa-solid fa-magnifying-glass text-xs w-5"></i><span>Analisis Kasus</span>
+            </a>
+            <a href="solusi.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center space-x-3">
+                <i class="fa-solid fa-lightbulb text-xs w-5"></i><span>Solusi</span>
+            </a>
+            <a href="kampanye.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold bg-slate-100 text-blue-900 flex items-center space-x-3">
+                <i class="fa-solid fa-bullhorn text-xs w-5"></i><span>Kampanye & Anggota</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero / Cover Banner Section (Disamakan seperti Beranda) -->
+    <section class="relative min-h-screen bg-[#1c445c] text-white flex flex-col justify-between pt-32 pb-36 overflow-hidden">
+        <!-- Canvas for Starfall Animation -->
+        <canvas id="starfall-canvas" class="absolute inset-0 pointer-events-none z-0"></canvas>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center my-auto">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-xs md:text-sm font-medium tracking-wide mb-6 shadow-sm">
+                <span>GERAKAN & AKSI DIGITAL</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-['Playfair_Display'] tracking-tight mb-4">
+                Infografis Kampanye & <br><span class="italic font-normal text-amber-200">Slogan Etika Digital</span>
+            </h1>
+            
+            <p class="text-slate-200/90 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                Wujud kreativitas Kelompok 2 dalam menyuarakan pentingnya bijak bermedia sosial demi menjaga nama baik sekolah dan nilai demokrasi.
+            </p>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <div class="relative z-10 text-center mt-6">
+            <a href="#konten-kampanye" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-all duration-300 animate-bounce">
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+            </a>
+        </div>
+
+        <!-- Wave Divider Shape -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10">
+            <svg class="relative block w-full h-16 md:h-24 lg:h-32 text-[#F8F6F0]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,50 L1200,120 L0,120 Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main id="konten-kampanye" class="py-12 px-6 md:px-12 max-w-5xl mx-auto">
+        
+        <!-- Header Info -->
+        <div class="mb-12 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-700/80 mb-2 block">INFOGRAFIS & SLOGAN RESMI</span>
+            <h2 class="text-3xl md:text-5xl font-bold font-['Playfair_Display'] text-slate-900 mb-3">Satu Suara, Beribu Warna</h2>
+            <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto font-light">
+                Klik pada gambar infografis di bawah untuk melihat tampilan penuh layar dengan latar belakang blur.
+            </p>
+        </div>
+
+        <!-- INFOGRAFIS & SLOGAN SHOWCASE SECTION -->
+        <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-slate-200/70 mb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Bagian Foto Infografis (Kiri) - Dapat diklik untuk Fullscreen Blur -->
+            <div class="lg:col-span-6 cursor-pointer" onclick="openLightbox()">
+                <div class="relative rounded-2xl overflow-hidden shadow-md border border-slate-200 bg-slate-100 group">
+                    <img src="infografis.png" alt="Infografis Demokrasi" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop';">
+                    <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white text-xs font-bold tracking-wide bg-black/60 px-4 py-2 rounded-xl backdrop-blur-md flex items-center space-x-2">
+                            <i class="fa-solid fa-expand"></i>
+                            <span>Klik untuk Lihat Layar Penuh</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian Slogan & Makna (Kanan) -->
+            <div class="lg:col-span-6 flex flex-col justify-center space-y-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200/60 inline-block mb-3">Slogan Utama</span>
+                    <h3 class="text-3xl md:text-4xl font-bold font-['Playfair_Display'] text-slate-900 leading-snug">
+                        "Satu Suara, Beribu Warna"
+                    </h3>
+                </div>
+
+                <div class="space-y-3 text-slate-600 text-sm md:text-base font-light leading-relaxed">
+                    <p>
+                        Setiap individu memiliki hak bersuara yang unik dalam berdemokrasi. Keberagaman pendapat ibarat ribuan warna yang memperkaya wawasan kita di era keterbukaan informasi.
+                    </p>
+                    <p>
+                        Mari junjung tinggi etika digital, saling menghargai perbedaan, dan wujudkan kedewasaan berdemokrasi di lingkungan sekolah maupun masyarakat.
+                    </p>
+                </div>
+
+                <div class="pt-2 flex flex-wrap gap-3">
+                    <button onclick="openLightbox()" class="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-amber-700 text-white font-medium text-sm shadow-sm hover:bg-amber-800 transition-all">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                        <span>Perbesar Infografis</span>
+                    </button>
+                    <a href="iinfografis.png" download class="inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-blue-900 text-white font-medium text-sm shadow-sm hover:bg-blue-800 transition-all">
+                        <i class="fa-solid fa-download text-xs"></i>
+                        <span>Unduh Infografis</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LIGHTBOX MODAL (FULLSCREEN BLUR BACKGROUND) -->
+        <div id="lightbox-modal" onclick="closeLightbox()" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 md:p-8 cursor-pointer">
+            <!-- Tombol Close (X) di Pojok Kanan Atas -->
+            <button onclick="closeLightbox()" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xl backdrop-blur-md transition-all z-50 shadow-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Gambar Ukuran Penuh di Tengah -->
+            <div class="relative max-w-4xl max-h-[90vh] flex items-center justify-center cursor-default" onclick="event.stopPropagation()">
+                <img src="infografis.png" alt="Infografis Fullscreen" class="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl border border-white/10">
+            </div>
+        </div>
+
+        <!-- DAFTAR ANGGOTA KELOMPOK SECTION -->
+        <div class="mb-12 text-center">
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-700/80 mb-2 block">TIM PENYUSUN</span>
+            <h2 class="text-3xl md:text-4xl font-bold font-['Playfair_Display'] text-slate-900 mb-3">Anggota Kelompok 2</h2>
+            <p class="text-slate-600 text-sm font-light">XI SIJA 1 · SMK Negeri 7 Semarang</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-20">
+            <!-- Anggota 1 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/70 text-center hover:shadow-md transition-all">
+                <div class="w-16 h-16 rounded-full bg-blue-900/10 text-blue-900 font-bold flex items-center justify-center text-xl mx-auto mb-4 font-['Playfair_Display']">
+                    03
+                </div>
+                <h3 class="font-bold text-slate-900 text-base mb-1">Afifah Riauna Aulia Putri</h3>
+                <p class="text-xs text-slate-500 font-medium">Pembuat Website · XI SIJA 1</p>
+            </div>
+            <!-- Anggota 2 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/70 text-center hover:shadow-md transition-all">
+                <div class="w-16 h-16 rounded-full bg-amber-700/10 text-amber-800 font-bold flex items-center justify-center text-xl mx-auto mb-4 font-['Playfair_Display']">
+                    06
+                </div>
+                <h3 class="font-bold text-slate-900 text-base mb-1">Almayra Ayudia Aisapramusita</h3>
+                <p class="text-xs text-slate-500 font-medium">Pembuat Website · XI SIJA 1</p>
+            </div>
+            <!-- Anggota 3 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/70 text-center hover:shadow-md transition-all">
+                <div class="w-16 h-16 rounded-full bg-purple-900/10 text-purple-900 font-bold flex items-center justify-center text-xl mx-auto mb-4 font-['Playfair_Display']">
+                    10
+                </div>
+                <h3 class="font-bold text-slate-900 text-base mb-1">Cahaya Aulia Agusta</h3>
+                <p class="text-xs text-slate-500 font-medium">Mencari Materi · XI SIJA 1</p>
+            </div>
+            <!-- Anggota 4 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/70 text-center hover:shadow-md transition-all">
+                <div class="w-16 h-16 rounded-full bg-emerald-900/10 text-emerald-700 font-bold flex items-center justify-center text-xl mx-auto mb-4 font-['Playfair_Display']">
+                    15
+                </div>
+                <h3 class="font-bold text-slate-900 text-base mb-1">Fathir Maulana Ibrahim</h3>
+                <p class="text-xs text-slate-500 font-medium">Mencari Materi · XI SIJA 1</p>
+            </div>
+            <!-- Anggota 5 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/70 text-center hover:shadow-md transition-all">
+                <div class="w-16 h-16 rounded-full bg-orange-900/10 text-orange-800 font-bold flex items-center justify-center text-xl mx-auto mb-4 font-['Playfair_Display']">
+                    22
+                </div>
+                <h3 class="font-bold text-slate-900 text-base mb-1">Kenzo Aditya Pratama</h3>
+                <p class="text-xs text-slate-500 font-medium">Pembuat Website · XI SIJA 1</p>
+            </div>
+            <!-- Anggota 6 -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/70 text-center hover:shadow-md transition-all">
+                <div class="w-16 h-16 rounded-full bg-teal-900/10 text-teal-800 font-bold flex items-center justify-center text-xl mx-auto mb-4 font-['Playfair_Display']">
+                    30
+                </div>
+                <h3 class="font-bold text-slate-900 text-base mb-1">Rifqy Aditya Arsyam</h3>
+                <p class="text-xs text-slate-500 font-medium">Mencari Materi · XI SIJA 1</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1c445c] text-white py-12 px-6 md:px-12 text-center border-t border-white/10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-xl font-bold font-['Playfair_Display'] mb-2">Demokrasi di Era Keterbukaan Informasi</h2>
+            <p class="text-slate-300 text-xs mb-6">Tugas Pendidikan Pancasila & Kewarganegaraan · Kelompok 2 XI SIJA 1</p>
+            <div class="w-16 h-[1px] bg-white/20 mx-auto mb-6"></div>
+            <p class="text-[11px] text-slate-400">&copy; 2026 Kelompok 2. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Lightbox Fullscreen Blur -->
+    <script>
+        const modalElement = document.getElementById('lightbox-modal');
+
+        function openLightbox() {
+            modalElement.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Kunci scroll halaman utama
+        }
+
+        function closeLightbox() {
+            modalElement.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Kembalikan scroll halaman utama
+        }
+
+        // Tutup modal jika tombol ESC ditekan
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+    <!-- External JavaScript for Starfall Canvas & Mobile Menu -->
+    <script src="script.js"></script>
+</body>
+</html>
